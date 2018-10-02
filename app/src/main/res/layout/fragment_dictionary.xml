@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#36273c"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="16dp"
+    android:weightSum="1"
+    tools:context="ga.winterhills.transly.DictionaryFragment">
+
+    <RelativeLayout
+        android:id="@+id/dic_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp">
+
+        <Spinner
+            android:id="@+id/dic_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="16dp"
+            android:layout_toLeftOf="@+id/space"
+            android:layout_toStartOf="@+id/space"
+            android:dropDownWidth="match_parent"
+            android:minWidth="30dp" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/button_to_right"
+            android:layout_toStartOf="@+id/button_to_right" />
+
+        <Button
+            android:id="@+id/button_to_right"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="13dp"
+            android:layout_marginRight="13dp"
+            android:background="@drawable/ic_arrow_forward" />
+
+        <!--        <Button
+            android:id="@+id/button_to_right"
+            style="@style/Widget.AppCompat.Button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:background="?attr/actionModeCloseDrawable" />-->
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/line" />
+
+    <EditText
+        android:id="@+id/firstLine"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:hint="Word"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/colorText"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/line" />
+
+    <EditText
+        android:id="@+id/secondLine"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@android:color/transparent"
+        android:fontFamily="sans-serif-thin"
+        android:gravity="center"
+        android:hint="Translation"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:textColor="#ffffff"
+        android:textColorHint="@color/colorText"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/line" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="40dp"
+        android:layout_height="52dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/bookmark"
+        android:onClick="addEntry" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="16dp"
+        android:divider="@drawable/line"
+        android:dividerHeight="1dp"
+        android:longClickable="true"
+        android:scrollbars="none" />
+
+</LinearLayout>

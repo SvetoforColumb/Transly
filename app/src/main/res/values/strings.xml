@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Transly</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="hello_blank_fragment">Settings</string>
+    <string name="translation">Translation</string>
+    <string name="word">Word</string>
+    <string name="separator">separator</string>
+    <string name="TRANSLY">TRANSLY</string>
+    <string name="WHEN">WHEN</string>
+    <string name="BEAUTY">BEAUTY</string>
+    <string name="BRINGS">BRINGS</string>
+    <string name="KNOWLEDGE">KNOWLEDGE</string>
+</resources>
