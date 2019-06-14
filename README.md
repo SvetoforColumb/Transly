@@ -1,3 +1,3 @@
 # Transly
 Android project for learning new vocabulary
- file: ![Demonstration](https://github.com/SvetoforColumb/Transly/blob/master/int.gif)
+ <img src="https://github.com/SvetoforColumb/Transly/raw/master/int.gif" alt="Demonstration" style="max-width:200px;">
