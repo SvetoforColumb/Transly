@@ -80,6 +80,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.onDi
 //            e.putString(APP_PREFERENCES_ENABLED_APP_LANGUAGE, "Default");
 //            e.apply();
 //        }
+
     }
 
 

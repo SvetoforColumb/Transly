@@ -42,7 +42,11 @@ public class DictionaryFragment extends Fragment {
     String sql_name;
     onDictionaryChangedListener dictionaryChangedListener;
     onButtonToRightClickedListener buttonToRightClickedListener;
-
+    SQLiteDatabase db;
+    Cursor c;
+    SimpleCursorAdapter simpleCursorAdapter;
+    DataBase dbHelper;
+    DictionaryFragment dictionaryFragment;
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -57,8 +61,23 @@ public class DictionaryFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         mSettings = getActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
         dic_choice = mSettings.getString(APP_PREFERENCES_ENABLED_DICTIONARY, "");
+        dbHelper = new DataBase(getActivity());
+        db = dbHelper.getWritableDatabase();
+        mSettings = getActivity().getSharedPreferences(APP_PREFERENCES, Context.MODE_PRIVATE);
+        dic_choice = mSettings.getString(APP_PREFERENCES_ENABLED_DICTIONARY, "");
+        c = db.rawQuery("SELECT * FROM " + dic_choice, null);
+        String[] headers = new String[]{"COLUMN_WORD", "COLUMN_TRANSLATION"};
+        simpleCursorAdapter = new SimpleCursorAdapter(getActivity(), R.layout.dic_list_view,
+                c, headers,
+                new int[]{R.id.firstWord, R.id.secondWord}, 0);
+
+
+        //db.close();
+        //c.close();
+
         //ListMaker listMakerTask = new ListMaker(this);
         //listMakerTask.execute();
     }
@@ -122,6 +141,10 @@ public class DictionaryFragment extends Fragment {
                 buttonToRightClickedListener.ButtonToRightClicked();
             }
         });
+        listView = view.findViewById(R.id.listView);
+        listView.setAdapter(simpleCursorAdapter);
+//        ListMaker listMaker = new ListMaker(this);
+//        listMaker.execute();
         return view;
     }
 
